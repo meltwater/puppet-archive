@@ -112,7 +112,7 @@ define archive::download (
         }
       }
     }
-    false :  { notice "No checksum for this archive" }
+    false :  {  }
     default: { fail ( "Unknown checksum value: '${checksum}'" ) }
   }
  
