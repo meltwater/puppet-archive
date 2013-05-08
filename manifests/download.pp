@@ -1,33 +1,29 @@
-/*
-
-== Definition: archive::download
-
-Archive downloader with integrity verification.
-
-Parameters:
-
-- *$url: 
-- *$digest_url:
-- *$digest_string: Default value "" 
-- *$digest_type: Default value "md5".
-- *$timeout: Default value 120.
-- *$src_target: Default value "/usr/src".
-- *$allow_insecure: Default value false.
-
-Example usage:
-
-  archive::download {"apache-tomcat-6.0.26.tar.gz":
-    ensure => present,
-    url => "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.tar.gz",
-  }
-  
-  archive::download {"apache-tomcat-6.0.26.tar.gz":
-    ensure => present,
-    digest_string => "f9eafa9bfd620324d1270ae8f09a8c89",
-    url => "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.tar.gz",
-  }
-   
-*/
+# == Definition: archive::download
+# 
+# Archive downloader with integrity verification.
+# 
+# Parameters:
+# 
+# - *$url: 
+# - *$digest_url:
+# - *$digest_string: Default value "" 
+# - *$digest_type: Default value "md5".
+# - *$timeout: Default value 120.
+# - *$src_target: Default value "/usr/src".
+# - *$allow_insecure: Default value false.
+# 
+# Example usage:
+# 
+#   archive::download {"apache-tomcat-6.0.26.tar.gz":
+#     ensure => present,
+#     url => "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.tar.gz",
+#   }
+#   
+#   archive::download {"apache-tomcat-6.0.26.tar.gz":
+#     ensure => present,
+#     digest_string => "f9eafa9bfd620324d1270ae8f09a8c89",
+#     url => "http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.tar.gz",
+#   }
 define archive::download (
   $ensure=present, 
   $url, 
